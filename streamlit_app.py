@@ -178,6 +178,6 @@ else:
 
 # Display the map using folium
 if location:
-    m = folium.Map(location=[lat, lon], zoom_ art=10)
+    m = folium.Map(location=[lat, lon], zoom_art=10)
     folium.Marker([lat, lon]).add_to(m)
     streamlit.write(m)

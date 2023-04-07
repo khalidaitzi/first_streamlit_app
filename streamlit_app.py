@@ -159,25 +159,4 @@ if streamlit.button('Add a fruit to list'):
   back_from_function=insert_row_snowflake(add_my_fruit)
   streamlit.text(back_from_function)
 
-  
-from geopy.geocoders import Nominatim
-import folium
-
-streamlit.title("Map based on City Name")
-
-# Get the city name from user input
-city = streamlit.text_input("Paris")
-
-# Convert city name to latitude and longitude using geopy
-geolocator = Nominatim(user_agent="my-app")
-location = geolocator.geocode(city)
-if location:
-    lat, lon = location.latitude, location.longitude
-else:
-    streamlit.warning("Invalid city name entered")
-
-# Display the map using folium
-if location:
-    m = folium.Map(location=[lat, lon], zoom_art=10)
-    folium.Marker([lat, lon]).add_to(m)
-    streamlit.write(m)
+ 
